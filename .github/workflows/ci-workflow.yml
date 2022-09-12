@@ -36,7 +36,7 @@ jobs:
 
       - name: Build
         run: |
-          make DEBUG=0 COIN=avian BOLOS_SDK=${{ matrix.SDK }} && mv bin/ bitcoin-bin/
+          make DEBUG=1 COIN=avian BOLOS_SDK=${{ matrix.SDK }} && mv bin/ bitcoin-bin/
       - name: Upload Avian app binary
         uses: actions/upload-artifact@v2
         with:
