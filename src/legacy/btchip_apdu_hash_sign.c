@@ -121,7 +121,9 @@ unsigned short btchip_apdu_hash_sign() {
                         sw = BTCHIP_SW_INCORRECT_DATA;
                         goto discardTransaction;
                     }
-                    sighashType |= (G_coin_config->forkid << 8);
+                    if(G_coin_config->kind != COIN_KIND_AVIAN) {
+                        sighashType |= (G_coin_config->forkid << 8);
+                    }
                 } else {
                     if (sighashType != SIGHASH_ALL) {
                         sw = BTCHIP_SW_INCORRECT_DATA;
