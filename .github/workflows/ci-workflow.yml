@@ -18,6 +18,10 @@ jobs:
     strategy:
       matrix:
         include:
+          - model: nanos
+            SDK: "$NANOS_SDK"
+          - model: nanox
+            SDK: "$NANOX_SDK"
           - model: nanosp
             SDK: "$NANOSP_SDK"
 
